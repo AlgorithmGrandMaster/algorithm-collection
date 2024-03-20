@@ -4,15 +4,21 @@ const input = require("fs").readFileSync(path).toString().trim().split("\n");
 let [n, ...strings] = input;
 n = Number(n);
 
-// 문제 풀이
 function solution(n, strings) {
   let answer = 0;
-  for (let i = 0; i < n; i += 1) {
+
+  // 입력 strings for문 돌리기 [ 'ABAB', 'AABB', 'ABBA' ]
+  for (let i = 0; i < n; i++) {
     const stack = [];
     const stringArray = strings[i].split("");
-    for (let j = 0; j < stringArray.length; j += 1) {
+
+    // [ 'A', 'B', 'A', 'B' ]
+    for (let j = 0; j < stringArray.length; j++) {
+      // stack의 마지막(제일 윗부분)
       const top = stack[stack.length - 1];
+      // 현재 stack에 집어넣을 string
       const current = stringArray[j];
+
       if (top === current) {
         stack.pop();
       } else {
@@ -26,6 +32,4 @@ function solution(n, strings) {
   return answer;
 }
 
-// 제출
-const answer = solution(n, strings);
-console.log(answer);
+console.log(solution(n, strings));
