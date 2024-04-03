@@ -10,7 +10,7 @@ const solution1 = (n) => {
     }
   };
 
-  DFS(n);
+  DFS(1);
   return answer;
 };
 
@@ -26,7 +26,7 @@ const solution2 = (n) => {
     }
   };
 
-  DFS(n);
+  DFS(1);
   return answer;
 };
 
@@ -42,7 +42,7 @@ const solution3 = (n) => {
     }
   };
 
-  DFS(n);
+  DFS(1);
   return answer;
 };
 
